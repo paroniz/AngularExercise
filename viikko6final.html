@@ -1,0 +1,159 @@
+﻿<head>
+<meta name="viewport" content="width=device-width, 
+initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta charset="utf-8" /> 
+<title>Oppimistehtävä 6</title>
+<link href="Main.css" rel="stylesheet" type="text/css" />
+<script>
+function changePage(id)
+{
+var p1 = document.getElementById("page1");
+var p2 = document.getElementById("page2");
+var p3 = document.getElementById("page3");
+var p4 = document.getElementById("page4");
+if(id == "home")
+{
+p1.style.visibility = "visible";
+p2.style.visibility = "hidden";
+p3.style.visibility = "hidden";
+p4.style.visibility = "hidden";
+p1.style.height = "auto";
+p2.style.height = "0";
+p3.style.height = "0";
+p4.style.height = "0";
+}
+else if(id == "kuva")
+{
+p1.style.visibility = "hidden";
+p2.style.visibility = "visible";
+p3.style.visibility = "hidden";
+p4.style.visibility = "hidden";
+p1.style.height = "0";
+p2.style.height = "auto";
+p3.style.height = "0";
+p4.style.height = "0";
+}
+else if(id == "karuselli")
+{
+p1.style.visibility = "hidden";
+p2.style.visibility = "hidden";
+p3.style.visibility = "visible";
+p4.style.visibility = "hidden";
+p1.style.height = "0";
+p2.style.height = "0";
+p3.style.height = "auto";
+p4.style.height = "0";
+}
+
+else if(id == "lomake")
+{
+p1.style.visibility = "hidden";
+p2.style.visibility = "hidden";
+p3.style.visibility = "hidden";
+p4.style.visibility = "visible";
+p1.style.height = "0";
+p2.style.height = "0";
+p3.style.height = "0";
+p4.style.height = "auto";
+}
+}
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div id="navi">
+<ul id="nav">
+<li>
+<a href="#" onClick="changePage('home');">Koti</a></li>
+<li><a href="#" onClick="changePage('kuva');">Kuvia</a></li>
+<li><a href="#" onClick="changePage('karuselli');">Karuselli</a></li>
+<li><a href="#" onClick="changePage('lomake');">Lomake</a></li>
+<li><a href="angular.html">Angular</a></li>
+</ul>
+</div>
+<div id="pages">
+
+
+<div id="page1">
+<h1>Koti</h1>
+<p>Tervetuloa!</p>
+</div>
+
+
+<div id="page2">
+<h1>Kuvia</h1>
+<p>Cooli Biisoni</p>
+<img src="kuva1.jpeg" alt="" style="width:500px;height:228px;">
+<br><br><p>Sammalta</p>
+<img src="kuva2.jpeg" alt="" style="width:500px;height:228px;">
+<br><br><p>Tuoreita mustikoita</p>
+<img src="kuva3.jpeg" alt="" style="width:500px;height:228px;">
+</div>
+
+
+
+<div id="page4">
+<h1>Google-haku</h1>
+<form method="get" action="http://www.google.com/search"> <input type="text" name="q" size="31" maxlength="255" value="" /> 
+<input type="submit" value="Hae Googlesta" /> 
+ </form>
+ </div>
+
+
+<div id="page3">
+<h1>Lintuja</h1>
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	  
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="lintu.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Sivu 1</h3>
+          <p>Lintu katsoo kameraan</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="eagle.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Sivu 2</h3>
+          <p>Toinen lintu</p>
+        </div>
+      </div>
+	  
+	  <div class="item">
+        <img src="duckling.jpeg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Sivu 3</h3>
+          <p>Nuoruuskuva linnusta</p>
+        </div>
+      </div>
+	  
+	  
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>

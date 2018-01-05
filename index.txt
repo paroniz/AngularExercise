@@ -1,0 +1,129 @@
+<head>
+<meta name="viewport" content="width=device-width, 
+initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta charset="utf-8" /> 
+<title>Oppimistehtävä 6</title>
+<link href="css/Main.css" rel="stylesheet" type="text/css" />
+<script>
+function changePage(id)
+{
+var p1 = document.getElementById("page1");
+var p2 = document.getElementById("page2");
+var p3 = document.getElementById("page3");
+if(id == "home")
+{
+p1.style.visibility = "visible";
+p2.style.visibility = "hidden";
+p3.style.visibility = "hidden";
+p1.style.height = "auto";
+p2.style.height = "0";
+p3.style.height = "0";
+}
+else if(id == "kuva")
+{
+p1.style.visibility = "hidden";
+p2.style.visibility = "visible";
+p3.style.visibility = "hidden";
+p1.style.height = "0";
+p2.style.height = "auto";
+p3.style.height = "0";
+}
+else if(id == "karuselli")
+{
+p1.style.visibility = "hidden";
+p2.style.visibility = "hidden";
+p3.style.visibility = "visible";
+p1.style.height = "0";
+p2.style.height = "0";
+p3.style.height = "auto";
+}
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div id="navi">
+<ul id="nav">
+<li>
+<a href="#" onClick="changePage('home');">Home</a></li>
+<li><a href="#" onClick="changePage('kuva');">Kuvat</a></li>
+<li><a href="#" onClick="changePage('karuselli');">Karuselli</li>
+</ul>
+</div>
+<div id="pages">
+<div id="page1">
+<h1>Home</h1>
+<p>Tervetuloa sivulle</p>
+</div>
+<div id="page2">
+<h1>Kuvat</h1>
+<h2>Crop</h2>
+<canvas id="kuva"></canvas>
+<script>
+	var canvas=document.getElementById('kuva');
+	var context=canvas.getContext('2d');
+	var imageObj=new Image();
+	
+	imageObj.onload=function(){
+		var sourceX=20;
+		var sourceY=20;
+		var sourceWidth=1400;
+		var sourceHeight=960;
+		var destWidth=sourceWidth;
+		var destHeight=sourceHeight;
+		var destX=(canvas.width / 2 - destHeight / 2);
+		var destY=(canvas.height / 2 - destHeight / 2);
+		context.drawImage(imageObj,sourceX,sourceY,sourceWidth,sourceHeight,destX,destY,destWidth,destHeight);
+		};
+		imageObj.src='boat.jpg';
+</script>
+<h2>Mirror &amp; Crop</h2>
+<canvas id="kuva2"></canvas>
+<script>
+var canvas2 = document.getElementById('kuva2');
+var context2 = canvas2.getContext('2d');
+var imageObj2 = new Image();
+imageObj2.onload = function() {
+context2.scale(-1,1);
+var sourceX = 20;
+var sourceY = 20;
+var sourceWidth = 1400;
+var sourceHeight = 960;
+var destWidth = sourceWidth;
+var destHeight = sourceHeight;
+var destX = (canvas.width / 2 - destWidth / 2);
+var destY = (canvas.height / 2 - destHeight / 2);
+context2.drawImage(imageObj2, sourceX, sourceY, 
+sourceWidth, sourceHeight, 
+destX, destY, destWidth, 
+destHeight);
+};
+imageObj2.src = 'boat.jpg';
+</script>
+<h2>Scale &amp; Crop</h2>
+<canvas id="kuva3"></canvas>
+<script>
+var canvas3 = document.getElementById('kuva3');
+var context3 = canvas3.getContext('2d');
+var imageObj3 = new Image();
+imageObj3.onload = function() {
+context3.scale(0.2,0.2);
+var sourceX = 20;
+var sourceY = 20;
+var sourceWidth = 1400;
+var sourceHeight = 960;
+var destWidth = sourceWidth;
+var destHeight = sourceHeight;
+var destX = (canvas.width / 2 - destWidth / 2);
+var destY = (canvas.height / 2 - destHeight / 2);
+context3.drawImage(imageObj3, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+};
+imageObj3.src = 'boat.jpg';
+</script>
+<h2>Alkuperäinen kuva</h2>
+<img src=boat.jpg>
+</div>
+</div>
+</div>
+</body>
+</html>
